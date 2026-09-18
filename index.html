@@ -1,27 +1,213 @@
-<!-- BANSARI YADAV - Lab 3 -->
+<!-- Bansari Yadav, Lab 4 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>My Web Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploring Web Development</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Welcome to My Web Development Journey!</h1>
-  <p>This page introduces what I am learning about HTML, CSS, and Git.</p>
-  <img src="new_york.jpg" alt="New York City " width="600">
-  <h2>About This Page</h2>
-  <ul>
-      <li>How to create websites with HTML</li>
-      <li>How to design pages with CSS</li>
-      <li>How to manage projects with Git</li>
-  </ul>
-  <p>
-   Visit the
-   <a href="https://developer.mozilla.org/" target="_blank">
-     MDN Web Development Reference
-   </a>
-  to learn more about HTML and CSS.
-  </p>
+
+  <header id="home">
+    <h1>Exploring Web Development</h1>
+    <p>
+      Learning how HTML, CSS, and JavaScript work together to create websites.
+    </p>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Web Development</a></li>
+      <li><a href="#schedule">Course Schedule</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="about">
+      <h2>What Is Web Development?</h2>
+
+      <p>
+        Web development is the process of creating websites and web
+        applications. Developers use HTML to organize content, CSS to control
+        the appearance of a webpage, and JavaScript to add interaction and
+        functionality.
+      </p>
+
+      <img
+        src="new_york.jpg"
+        alt="New York City skyline"
+        width="500"
+      >
+
+      <h3>Three Important Web Technologies</h3>
+
+      <ul>
+        <li>
+          <strong>HTML:</strong>
+          Defines the content and structure of a webpage.
+        </li>
+
+        <li>
+          <strong>CSS:</strong>
+          Controls colors, fonts, spacing, and page layout.
+        </li>
+
+        <li>
+          <strong>JavaScript:</strong>
+          Adds interactivity and dynamic behavior.
+        </li>
+      </ul>
+
+      <h3>Helpful Web Development Resources</h3>
+
+      <p>
+        The following websites provide tutorials, documentation, and tools for
+        learning web development:
+      </p>
+
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MDN Web Development Guide
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.w3schools.com/html/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            W3Schools HTML Tutorial
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            freeCodeCamp Responsive Web Design
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="https://validator.w3.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            W3C HTML Validator
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="schedule">
+      <h2>Web Development Course Schedule</h2>
+
+      <table>
+        <caption>Weekly Web Development Topics</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Week</th>
+            <th scope="col">Topic</th>
+            <th scope="col">Main Skill</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Introduction to the Web</td>
+            <td>Understanding browsers and websites</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>HTML Foundations</td>
+            <td>Creating headings and paragraphs</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Links, Lists, and Images</td>
+            <td>Adding different types of content</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Advanced HTML</td>
+            <td>Using semantic layouts, tables, and forms</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+
+      <p>
+        Complete the form below if you would like to share a web development
+        resource or ask a question.
+      </p>
+
+      <form>
+
+        <p>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required>
+        </p>
+
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+          <label for="msg">Message:</label><br>
+          <textarea
+            id="msg"
+            name="msg"
+            rows="5"
+            cols="40"
+          ></textarea>
+        </p>
+
+        <p>
+          <label for="referral">How did you find this page?</label><br>
+
+          <select id="referral" name="referral">
+            <option value="">Choose an option</option>
+            <option value="search">Search engine</option>
+            <option value="social">Social media</option>
+            <option value="friend">A friend</option>
+          </select>
+        </p>
+
+        <button type="submit">Send</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bansari Yadav</p>
+    <p><a href="#home">Return to the top</a></p>
+  </footer>
+
 </body>
 </html>
