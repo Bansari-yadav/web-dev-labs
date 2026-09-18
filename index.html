@@ -13,6 +13,7 @@
 
   <header id="home">
     <h1>Exploring Web Development</h1>
+
     <p>
       Learning how HTML, CSS, and JavaScript work together to create websites.
     </p>
@@ -168,12 +169,22 @@
 
         <p>
           <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name" required>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+          >
         </p>
 
         <p>
           <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" required>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
         </p>
 
         <p>
@@ -197,6 +208,27 @@
           </select>
         </p>
 
+        <p>
+          <label for="zip">ZIP Code:</label><br>
+
+          <input
+            type="text"
+            id="zip"
+            name="zip"
+            pattern="^\d{5}$"
+            required
+            aria-describedby="zip-help zip-result"
+          >
+
+          <br>
+
+          <small id="zip-help">
+            Enter exactly five digits.
+          </small>
+        </p>
+
+        <p id="zip-result" aria-live="polite"></p>
+
         <button type="submit">Send</button>
 
       </form>
@@ -208,6 +240,8 @@
     <p>&copy; 2026 Bansari Yadav</p>
     <p><a href="#home">Return to the top</a></p>
   </footer>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
