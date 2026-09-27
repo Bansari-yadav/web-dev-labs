@@ -1,3 +1,9 @@
+/* Bansari Yadav — Lab 5 */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   color: #333333;
@@ -6,6 +12,17 @@ body {
   margin: 40px auto;
   padding: 20px;
   line-height: 1.6;
+}
+
+header {
+  padding: 24px;
+  background-color: #0f9488;
+  color: white;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  color: white;
 }
 
 h1 {
@@ -30,10 +47,62 @@ a:hover {
   color: #dc2626;
 }
 
+#main-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  background-color: #0d3b36;
+}
+
+#main-nav ul {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+#main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+}
+
+#main-nav a:hover {
+  background-color: #14b8a6;
+}
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
   margin-top: 20px;
   border-radius: 8px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+thead {
+  background-color: #e6f7f4;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  margin-bottom: 12px;
 }
