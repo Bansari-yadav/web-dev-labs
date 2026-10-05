@@ -1,4 +1,4 @@
-/* Bansari Yadav — Lab 5 */
+/* Bansari Yadav — Lab 6 */
 
 * {
   box-sizing: border-box;
@@ -19,6 +19,9 @@ header {
   background-color: #0f9488;
   color: white;
   margin-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header h1 {
@@ -54,8 +57,10 @@ a:hover {
   background-color: #0d3b36;
 }
 
+/* Mobile-first: phone layout is the default */
 #main-nav ul {
   display: flex;
+  flex-direction: column;
   gap: 8px;
   justify-content: center;
   list-style: none;
@@ -68,6 +73,7 @@ a:hover {
   color: white;
   text-decoration: none;
   padding: 12px;
+  transition: background-color 0.2s ease;
 }
 
 #main-nav a:hover {
@@ -105,4 +111,46 @@ select {
   max-width: 400px;
   padding: 8px;
   margin-bottom: 12px;
+}
+
+.image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #dc2626;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+/* Small-screen heading */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Graduate Extension: desktop nav added on top of mobile base */
+@media (min-width: 600px) {
+  #main-nav ul {
+    flex-direction: row;
+  }
+}
+
+/* Tablet sizing */
+@media (max-width: 900px) {
+  table {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+    max-width: 100%;
+  }
 }
