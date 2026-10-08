@@ -1,4 +1,3 @@
-<!-- Bansari Yadav, Lab 6 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +13,9 @@
 
   <header id="home">
     <h1>Exploring Web Development</h1>
-
     <p>
-      Learning how HTML, CSS, and JavaScript work together to create websites.
+      Learning how HTML, CSS, and JavaScript work together
+      to create websites.
     </p>
   </header>
 
@@ -32,25 +31,24 @@
   <main>
 
     <section id="about">
-
       <h2>What Is Web Development?</h2>
 
       <p>
-        Web development is the process of creating websites and web
-        applications. Developers use HTML to organize content, CSS to control
-        the appearance of a webpage, and JavaScript to add interaction and
-        functionality.
+        Web development is the process of creating websites
+        and web applications. Developers use HTML to organize
+        content, CSS to control the appearance of a webpage,
+        and JavaScript to add interaction and functionality.
       </p>
 
       <div class="image-wrap">
         <img
-           src="new_york.jpg"
-           alt="New York City skyline"
-           width="500"
-           height="300"
+          src="new_york.jpg"
+          alt="New York City skyline"
+          width="500"
+          height="300"
         >
-  <span class="badge">New</span>
-</div>
+        <span class="badge">New</span>
+      </div>
 
       <h3>Three Important Web Technologies</h3>
 
@@ -59,12 +57,10 @@
           <strong>HTML:</strong>
           Defines the content and structure of a webpage.
         </li>
-
         <li>
           <strong>CSS:</strong>
           Controls colors, fonts, spacing, and page layout.
         </li>
-
         <li>
           <strong>JavaScript:</strong>
           Adds interactivity and dynamic behavior.
@@ -74,60 +70,42 @@
       <h3>Helpful Web Development Resources</h3>
 
       <p>
-        The following websites provide tutorials, documentation, and tools for
-        learning web development:
+        The following websites provide tutorials,
+        documentation, and tools for learning web development:
       </p>
 
       <ul>
         <li>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+             target="_blank" rel="noopener noreferrer">
             MDN Web Development Guide
           </a>
         </li>
-
         <li>
-          <a
-            href="https://www.w3schools.com/html/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.w3schools.com/html/"
+             target="_blank" rel="noopener noreferrer">
             W3Schools HTML Tutorial
           </a>
         </li>
-
         <li>
-          <a
-            href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
+             target="_blank" rel="noopener noreferrer">
             freeCodeCamp Responsive Web Design
           </a>
         </li>
-
         <li>
-          <a
-            href="https://validator.w3.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://validator.w3.org/"
+             target="_blank" rel="noopener noreferrer">
             W3C HTML Validator
           </a>
         </li>
       </ul>
-
     </section>
 
     <section id="schedule">
-
       <h2>Web Development Course Schedule</h2>
 
       <table>
-
         <caption>Weekly Web Development Topics</caption>
 
         <thead>
@@ -139,73 +117,67 @@
         </thead>
 
         <tbody>
-
           <tr>
             <td>1</td>
             <td>Introduction to the Web</td>
             <td>Understanding browsers and websites</td>
           </tr>
-
           <tr>
             <td>2</td>
             <td>HTML Foundations</td>
             <td>Creating headings and paragraphs</td>
           </tr>
-
           <tr>
             <td>3</td>
             <td>Links, Lists, and Images</td>
             <td>Adding different types of content</td>
           </tr>
-
           <tr>
             <td>4</td>
             <td>Advanced HTML</td>
             <td>Using semantic layouts, tables, and forms</td>
           </tr>
-
         </tbody>
-
       </table>
+    </section>
 
+    <!-- Lab 7: JavaScript Interactivity -->
+    <section id="javascript">
+      <h2>JavaScript Interactivity</h2>
+
+      <h3>Like Counter</h3>
+      <button id="like-btn" type="button">
+        Like this page
+      </button>
+      <p id="like-count">0 likes</p>
+
+      <h3>Dark Mode</h3>
+      <button id="theme-btn" type="button">
+        Toggle dark mode
+      </button>
     </section>
 
     <section id="contact">
-
       <h2>Contact Me</h2>
 
       <p>
-        Complete the form below if you would like to share a web development
-        resource or ask a question.
+        Complete the form below if you would like to share
+        a web development resource or ask a question.
       </p>
 
       <form>
-
         <p>
           <label for="name">Name:</label><br>
-
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-          >
+          <input type="text" id="name" name="name" required>
         </p>
 
         <p>
           <label for="email">Email:</label><br>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-          >
+          <input type="email" id="email" name="email" required>
         </p>
 
         <p>
           <label for="msg">Message:</label><br>
-
           <textarea
             id="msg"
             name="msg"
@@ -215,7 +187,9 @@
         </p>
 
         <p>
-          <label for="referral">How did you find this page?</label><br>
+          <label for="referral">
+            How did you find this page?
+          </label><br>
 
           <select id="referral" name="referral">
             <option value="">Choose an option</option>
@@ -227,7 +201,6 @@
 
         <p>
           <label for="zip">ZIP Code:</label><br>
-
           <input
             type="text"
             id="zip"
@@ -236,9 +209,7 @@
             required
             aria-describedby="zip-help zip-result"
           >
-
           <br>
-
           <small id="zip-help">
             Enter exactly five digits.
           </small>
@@ -247,25 +218,16 @@
         <p id="zip-result" aria-live="polite"></p>
 
         <button type="submit">Send</button>
-
       </form>
-
     </section>
 
   </main>
 
   <footer>
-
     <p>&copy; 2026 Bansari Yadav</p>
-
-    <p>
-      <a href="#home">Return to the top</a>
-    </p>
-
+    <p><a href="#home">Return to the top</a></p>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
-
 </html>

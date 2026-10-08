@@ -1,4 +1,4 @@
-/* Bansari Yadav — Lab 6 */
+/* Bansari Yadav — Lab 7 Dark Mode */
 
 * {
   box-sizing: border-box;
@@ -153,4 +153,11 @@ select {
     width: 100%;
     max-width: 100%;
   }
+}
+
+
+
+body.dark {
+  background-color: #111827;
+  color: #f1f5f9;
 }
