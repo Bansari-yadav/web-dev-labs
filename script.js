@@ -118,7 +118,7 @@ function getGreetingAfterDelay() {
 // });
 async function showGreeting() {
   const message = await getGreetingAfterDelay();
-  console.log(message);
+  console.log("Part 3 (async/await):", message);
 }
 
 showGreeting();
@@ -157,3 +157,69 @@ async function loadFact() {
 }
 
 factBtn.addEventListener("click", loadFact);
+
+function getGreetingAfterDelay() {
+  return new Promise(function(resolve) {
+    setTimeout(function() {
+      resolve("Hello from the future!");
+    }, 800);
+  });
+}
+
+// getGreetingAfterDelay().then(function(message) {
+//   console.log("Part 2 (.then):", message);
+// });
+async function fetchFactForTiming() {
+  const response = await fetch("https://catfact.ninja/fact");
+
+  if (!response.ok) {
+    throw new Error("Server responded with an error");
+  }
+
+  return response.json();
+}
+
+async function testSequential() {
+  console.time("sequential");
+
+  const first = await fetchFactForTiming();
+  const second = await fetchFactForTiming();
+
+  console.timeEnd("sequential");
+  console.log("Sequential facts:", first.fact, second.fact);
+}
+
+async function testConcurrent() {
+  console.time("concurrent");
+
+  const [first, second] = await Promise.all([
+    fetchFactForTiming(),
+    fetchFactForTiming()
+  ]);
+
+  console.timeEnd("concurrent");
+  console.log("Concurrent facts:", first.fact, second.fact);
+}
+
+async function testConcurrent() {
+  const url = "https://catfact.ninja/fact";
+
+  console.time("concurrent");
+
+  const [responseA, responseB] = await Promise.all([
+    fetch(url),
+    fetch(url)
+  ]);
+
+  if (!responseA.ok || !responseB.ok) {
+    throw new Error("A request failed");
+  }
+
+  const [factA, factB] = await Promise.all([
+    responseA.json(),
+    responseB.json()
+  ]);
+
+  console.timeEnd("concurrent");
+  console.log("Concurrent facts:", factA.fact, factB.fact);
+}
