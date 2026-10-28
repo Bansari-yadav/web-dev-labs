@@ -96,7 +96,33 @@ if (themeBtn) {
   });
 }
 
-// Lab 8 — Part 2: Arrays and Loops
+// Bansari Yadav - Lab 9
+
+// console.log("1. Starting");
+
+// setTimeout(function() {
+//   console.log("2. This runs later");
+// }, 1000);
+
+// console.log("3. This runs immediately");
+function getGreetingAfterDelay() {
+  return new Promise(function(resolve) {
+    setTimeout(function() {
+      resolve("Hello from the future!");
+    }, 800);
+  });
+}
+
+// getGreetingAfterDelay().then(function(message) {
+//   console.log(message);
+// });
+async function showGreeting() {
+  const message = await getGreetingAfterDelay();
+  console.log(message);
+}
+
+showGreeting();
+
 const goals = ["HTML", "CSS", "JavaScript", "Git"];
 const goalsList = document.querySelector("#goals-list");
 
@@ -107,3 +133,27 @@ if (goalsList) {
     goalsList.appendChild(item);
   });
 }
+const factBtn = document.querySelector("#fact-btn");
+const factDisplay = document.querySelector("#fact-display");
+
+async function loadFact() {
+  factDisplay.textContent = "Loading...";
+
+  try {
+    const response = await fetch("https://catfact.ninja/fact");
+
+    if (!response.ok) {
+      throw new Error("Server responded with an error");
+    }
+
+    const data = await response.json();
+    factDisplay.textContent = data.fact;
+  } catch (error) {
+    factDisplay.textContent =
+      "Couldn't load a fact right now. Try again.";
+
+    console.error(error);
+  }
+}
+
+factBtn.addEventListener("click", loadFact);
