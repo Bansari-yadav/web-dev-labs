@@ -1,5 +1,5 @@
 
-// Bansari Yadav — Lab 8
+// Bansari Yadav — Lab 10
 
 // Previous Lab: JavaScript Connection
 console.log("script.js is connected");
@@ -60,12 +60,30 @@ function updateLikeDisplay(count) {
 }
 
 // Closure-based counter with private state
+// function createLikeCounter() {
+//   let likes = 0;
+
+//   return {
+//     increment() {
+//       likes++;
+//       updateLikeDisplay(likes);
+//     },
+
+//     getLikes() {
+//       return likes;
+//     }
+//   };
+// }
+
+
+ // Lab 10 — Save likes using localStorage
 function createLikeCounter() {
-  let likes = 0;
+  let likes = Number(localStorage.getItem("likes")) || 0;
 
   return {
     increment() {
       likes++;
+      localStorage.setItem("likes", likes);
       updateLikeDisplay(likes);
     },
 
@@ -78,6 +96,9 @@ function createLikeCounter() {
 // Create the counter
 const counter = createLikeCounter();
 
+// Lab 10 — Show saved likes when page loads
+updateLikeDisplay(counter.getLikes());
+
 // Part 4: Defensive event listener
 if (likeBtn) {
   likeBtn.addEventListener("click", function() {
@@ -87,14 +108,39 @@ if (likeBtn) {
   console.warn("like-btn not found on this page");
 }
 
-// Previous Lab: Dark Mode Toggle
+// // Previous Lab: Dark Mode Toggle
+// const themeBtn = document.querySelector("#theme-btn");
+
+// if (themeBtn) {
+//   themeBtn.addEventListener("click", function() {
+//     document.body.classList.toggle("dark");
+//   });
+// }
+
+
+
+ // Lab 10 — Persistent Dark Mode
 const themeBtn = document.querySelector("#theme-btn");
 
+// Restore saved theme when the page loads
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+
+// Save preference when user changes theme
 if (themeBtn) {
   themeBtn.addEventListener("click", function() {
     document.body.classList.toggle("dark");
+
+    const isDark = document.body.classList.contains("dark");
+
+    localStorage.setItem(
+      "theme",
+      isDark ? "dark" : "light"
+    );
   });
 }
+
 
 // Bansari Yadav - Lab 9
 
@@ -222,4 +268,41 @@ async function testConcurrent() {
 
   console.timeEnd("concurrent");
   console.log("Concurrent facts:", factA.fact, factB.fact);
+}
+
+
+ // Lab 10 — Part 3: Geolocation API
+
+const locationBtn = document.querySelector("#location-btn");
+const locationDisplay = document.querySelector("#location-display");
+
+if (locationBtn && locationDisplay) {
+  locationBtn.addEventListener("click", function() {
+
+    // Part 4 — Feature Detection
+    if (!("geolocation" in navigator)) {
+      locationDisplay.textContent =
+        "Geolocation isn't supported.";
+      return;
+    }
+
+    locationDisplay.textContent = "Getting your location...";
+
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        const lat = position.coords.latitude.toFixed(2);
+        const lon = position.coords.longitude.toFixed(2);
+
+        locationDisplay.textContent =
+          `You're near ${lat}, ${lon}`;
+      },
+
+      function(error) {
+        locationDisplay.textContent =
+          "Location access was denied.";
+
+        console.warn(error);
+      }
+    );
+  });
 }
